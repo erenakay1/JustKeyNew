@@ -12,6 +12,43 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 
+
+/* Temel select kutusu stilini sýfýrla */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+    /* Ok iþareti için ayrý bir stil */
+    select::after {
+        content: '\25BC'; /* Ok iþareti Unicode karakteri */
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        pointer-events: none; /* Ok iþaretine týklanabilirliði devre dýþý býrak */
+    }
+
+    /* Seçili öðenin rengini ve arka plan rengini deðiþtir */
+    select:focus {
+        outline: none;
+        border-color: #007bff; /* Varsayýlan renk (mavi) */
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Seçim odaklandýðýnda gölge */
+    }
+
+    /* Seçeneklerin hover durumunda rengini deðiþtir */
+    select option:hover {
+        background-color: #f0f0f0;
+    }
+
+
 a.navbar-brand {
     white-space: normal;
     text-align: center;
